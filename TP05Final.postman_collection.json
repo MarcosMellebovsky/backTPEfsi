@@ -1,0 +1,942 @@
+{
+	"info": {
+		"_postman_id": "0db54b65-e27d-4ad7-8319-ccac8b7ca094",
+		"name": "TP05",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34258814",
+		"_collection_link": "https://budin9.postman.co/workspace/budin-Workspace~9dc13ed2-4994-491b-8532-e40a778b4cb5/collection/34258814-0db54b65-e27d-4ad7-8319-ccac8b7ca094?action=share&source=collection_link&creator=34258814"
+	},
+	"item": [
+		{
+			"name": "province",
+			"item": [
+				{
+					"name": "7 - province - GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/province",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"province"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "7 - province - GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/province/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"province",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "7 - province - GetLocations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/province/1/locations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"province",
+								"1",
+								"locations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "7 - province - Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"name\" : \"Chaco Provincia\",\r\n\"full_name\" : \"Provincia de Chaco\",\r\n\"latitude\" : -24.895086288452148,\r\n\"longitude\" : -59.93218994140625,\r\n\"display_order\" : 100\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/province",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"province"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "7 - province - Uptade",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"id\" : 4,\r\n\"name\" : \"Provincia Modificada\",\r\n\"full_name\" : \"Provincia Modificada\",\r\n\"latitude\" : -24.895086288452148,\r\n\"longitude\" : -59.93218994140625,\r\n\"display_order\" : 100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/province",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"province"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "7 - province - DeleteById",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/province/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"province",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "events",
+			"item": [
+				{
+					"name": "2 - Todos los eventos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/event/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"event",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3 - Busqueda de un evento",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/event?name=Art",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"event"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Art"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4 - Detalle evento",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/event/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"event",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5 - Listado de participantes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/event/2/enrollment?first_name=Jane&last_name=Smith&username=jsmith@gmail.com&attended=true&rating=9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"event",
+								"2",
+								"enrollment"
+							],
+							"query": [
+								{
+									"key": "first_name",
+									"value": "Jane"
+								},
+								{
+									"key": "last_name",
+									"value": "Smith"
+								},
+								{
+									"key": "username",
+									"value": "jsmith@gmail.com"
+								},
+								{
+									"key": "attended",
+									"value": "true"
+								},
+								{
+									"key": "rating",
+									"value": "9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "8 - Crear evento",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJqc21pdGhAZ21haWwuY29tIiwiaWF0IjoxNzIwODM1OTE1LCJleHAiOjE3MjA4NDMxMTUsImlzcyI6Im1pT3JnYW5pemFjaW9uIn0.0RleYMi2g5SqLIjBrdo-GTM6Dv0utTtc-f4oz98a8A8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Evento de prueba final\",\r\n    \"description\": \"Descripción del evento de prueba\",\r\n    \"id_event_category\": 5,\r\n    \"id_event_location\": 4,\r\n    \"start_date\": \"2024-07-05T10:00:00Z\",\r\n    \"duration_in_minutes\": 120,\r\n    \"price\": 50.00,\r\n    \"enabled_for_enrollment\": true,\r\n    \"max_assistance\": 100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/event/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"event",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "8 - Modificar Evento",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJqc21pdGhAZ21haWwuY29tIiwiaWF0IjoxNzIwODM2MTg1LCJleHAiOjE3MjA4NDMzODUsImlzcyI6Im1pT3JnYW5pemFjaW9uIn0.tG0KhNxERwLmsVfSjPgEH8uTsWKR1RlSpcTaesReZsA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":4,\r\n    \"name\": \"Evento de prueba modificado1\",\r\n    \"description\": \"Descripción del evento de prueba\",\r\n    \"id_event_category\": 1,\r\n    \"id_event_location\": 5,\r\n    \"start_date\": \"2024-07-05T10:00:00Z\",\r\n    \"duration_in_minutes\": 120,\r\n    \"price\": 50.00,\r\n    \"enabled_for_enrollment\": true,\r\n    \"max_assistance\": 100,\r\n    \"id_creator_user\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/event/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"event",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "8 - Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJqc21pdGhAZ21haWwuY29tIiwiaWF0IjoxNzIwODM2MTg1LCJleHAiOjE3MjA4NDMzODUsImlzcyI6Im1pT3JnYW5pemFjaW9uIn0.tG0KhNxERwLmsVfSjPgEH8uTsWKR1RlSpcTaesReZsA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/event/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"event",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "9- Inscripcion Evento",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJqc21pdGhAZ21haWwuY29tIiwiaWF0IjoxNzIwODM2MTg1LCJleHAiOjE3MjA4NDMzODUsImlzcyI6Im1pT3JnYW5pemFjaW9uIn0.tG0KhNxERwLmsVfSjPgEH8uTsWKR1RlSpcTaesReZsA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/event/5/enrollment/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"event",
+								"5",
+								"enrollment",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "9 - Inscripcion Evento",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/event/5/enrollment/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"event",
+								"5",
+								"enrollment",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "10 - Rating de un Evento",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"observations\": \"Fue increíble!!. Conviene estacionar lejos!!!!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/event/2/enrollment/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"event",
+								"2",
+								"enrollment",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "12 - Categorias - GetAll",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/event-category/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"event-category",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "12 - Categorias - GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/event-category/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"event-category",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "12 - Categorias - Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"name\": \"LeagueOfLegends\",\r\n        \"display_order\": 3\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/event-category/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"event-category",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "12 - Categorias - Edit",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"id\": 5,\r\n        \"name\": \"Ro\",\r\n        \"display_order\": 4\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/event-category/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"event-category",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "12 - Categorias - Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/event-category/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"event-category",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "13 - Unicaciones de Eventos - GetAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJqc21pdGhAZ21haWwuY29tIiwiaWF0IjoxNzIwODMwMzkwLCJleHAiOjE3MjA4Mzc1OTAsImlzcyI6Im1pT3JnYW5pemFjaW9uIn0.ETw8kBzt-WkyQ7TKqM8VvmVRVeIGRHJG7-wcOOSZWR8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/event-location",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"event-location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "13 - Unicaciones de Eventos - GetById (Mismo Event Location)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJqc21pdGhAZ21haWwuY29tIiwiaWF0IjoxNzIwODIzOTM4LCJleHAiOjE3MjA4MzExMzgsImlzcyI6Im1pT3JnYW5pemFjaW9uIn0.6rHqoxkcLX63sGqwpKCdDG58gZhuYWNcRc_QfX9_CdU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/event-location/20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"event-location",
+								"20"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "13 - Unicaciones de Eventos - GetById (localizacion especifica)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJqc21pdGhAZ21haWwuY29tIiwiaWF0IjoxNzIwODI1NTM3LCJleHAiOjE3MjA4MzI3MzcsImlzcyI6Im1pT3JnYW5pemFjaW9uIn0.qAr3cft4JU9dEN_1D2dRiZwSEiyiTbguaZ3vBnOobhY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_location\":1 ,\r\n    \"name\":\"salon1234\",\r\n    \"full_address\":\"rivadavia\",\r\n    \"max_capacity\":100,\r\n    \"latitude\":47.0900,\r\n    \"longitude\":-87.1213\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/event-location",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"event-location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "13-Actualizar event location",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJqc21pdGhAZ21haWwuY29tIiwiaWF0IjoxNzIwODMxMjI5LCJleHAiOjE3MjA4Mzg0MjksImlzcyI6Im1pT3JnYW5pemFjaW9uIn0.svktXhh9gBs5mwmREcItTTioUXhLVS41VkMaJoB0rRo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":4,\r\n    \"id_location\":1,\r\n    \"name\":\"salon prime\",\r\n    \"full_address\":\"rivadavia\",\r\n    \"max_capacity\":100,\r\n    \"latitude\":47.0900,\r\n    \"longitude\":-87.1213\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/event-location/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"event-location",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "13- eliminar event location",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJqc21pdGhAZ21haWwuY29tIiwiaWF0IjoxNzIwODI0Nzk2LCJleHAiOjE3MjA4MzE5OTYsImlzcyI6Im1pT3JnYW5pemFjaW9uIn0.NQsamwbZm8iTvqFQhuIo9wDBN1a8wzBNYp8ZOeJt_pU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/event-location/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"event-location",
+								"9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "usuarios",
+			"item": [
+				{
+					"name": "6 - Autenticacion de Usuarios - Login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJqc21pdGhAZ21haWwuY29tIiwiaWF0IjoxNzIwODI1MTExLCJleHAiOjE3MjA4MzIzMTEsImlzcyI6Im1pT3JnYW5pemFjaW9uIn0.i5AFxOq6lBvs4LvIHv8-hczmU-MY2zz_Wvd1O0Za0Qc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"jsmith@gmail.com\",\r\n    \"password\":\"password2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "6 - Autenticacion de Usuarios - Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\":\"Maxi\",\r\n    \"last_name\": \"Garbarino\",\r\n    \"username\":\"maxi@gmail.com\",\r\n    \"password\": \"HolaProfe\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Locations",
+			"item": [
+				{
+					"name": "11 - Locations Todas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/location",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "11 - Locations Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/location/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"location",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "11 - Locations Provincia",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJqc21pdGhAZ21haWwuY29tIiwiaWF0IjoxNzIwODI2ODI1LCJleHAiOjE3MjA4MzQwMjUsImlzcyI6Im1pT3JnYW5pemFjaW9uIn0.5BXtZhTL0DMA3T3Ozi-eCRyQvVlYex2vof8NO-ZsbH4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/location/3/event-location",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"location",
+								"3",
+								"event-location"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
