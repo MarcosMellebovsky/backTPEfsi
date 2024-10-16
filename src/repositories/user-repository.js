@@ -16,48 +16,52 @@ export class UserRepository {
       let last_name = body.last_name;
       let username = body.username;
       let password = body.password;
+
+      // Obtener el último id
       const sql = `SELECT id FROM public.users ORDER BY id DESC limit 1;`;
       const result = await client.query(sql);
       let obj = result.rows[0];
       const id = obj.id + 1;
 
+      // Validar correo y otros campos
       function validarEmail(username) {
-        // Expresión regular para validar un correo electrónico
         const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         return regex.test(username);
       }
+      
       if (first_name.length < 3 || last_name.length < 3) {
-        return [
-          "Nombre o apellido estan vacion o tienen menos de 3 caracteres",
-          400,
-        ];
+        return ["Nombre o apellido inválido", 400];
+      } else if (!validarEmail(username)) {
+        return ["Correo inválido", 400];
+      } else if (password.length < 3) {
+        return ["Contraseña inválida", 400];
       } else {
-        if (!validarEmail(username)) {
-          return ["No se valido el email", 400];
-        } else {
-          if (password.length < 3) {
-            return ["Contraseña vacio o con pocos caracteres", 400];
-          } else {
-            console.log(id);
-            const sql = `
-            INSERT INTO public.users
-                (id,first_name, last_name, username, password)
-            VALUES
-                ($1,$2,$3,$4,$5)`;
-            const values = [id, first_name, last_name, username, password];
-            console.log(values)
-            const result = await client.query(sql, values);
-            return ["created", 201];
-          }
-        }
+        // Insertar el usuario en la base de datos
+        const sql = `
+          INSERT INTO public.users
+              (id, first_name, last_name, username, password)
+          VALUES
+              ($1, $2, $3, $4, $5)`;
+        const values = [id, first_name, last_name, username, password];
+        await client.query(sql, values);
+
+        // Generar token JWT
+        const payload = { id, username };
+        const secretKey = "ClaveSecreta3000$";
+        const options = { expiresIn: "2h", issuer: "miOrganizacion" };
+        const token = jwt.sign(payload, secretKey, options);
+
+        // Retornar el token y el estado exitoso
+        return [{ success: true, message: "Usuario creado", token: token }, 201];
       }
     } catch (error) {
-      return [error, 404];
+      console.error("Error:", error);
+      return [{ success: false, message: "Error interno del servidor" }, 500];
     }
   };
+
   logAsync = async (body) => {
     function validarEmail(username) {
-      // Expresión regular para validar un correo electrónico
       const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
       return regex.test(username);
     }
@@ -72,7 +76,7 @@ export class UserRepository {
       ];
     }
 
-    const sql = `SELECT * FROM public.users WHERE username = $1 AND password = $2 `;
+    const sql = `SELECT * FROM public.users WHERE username = $1 AND password = $2`;
     const values = [username, password];
 
     try {
@@ -89,7 +93,7 @@ export class UserRepository {
           expiresIn: "2h",
           issuer: "miOrganizacion",
         };
-        token = jwt.sign(payload, secretKey, options);
+        const token = jwt.sign(payload, secretKey, options);
 
         return [{ success: true, message: "", token: token }, 200];
       } else {
